@@ -1117,7 +1117,7 @@ main {
   color: var(--white-1);
   padding: 12px;
   border-radius: 12px;
-  font-size: 26px;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1126,17 +1126,31 @@ main {
 }
 
 .contact-icon-box.email {
-  color: var(--orange-yellow-crayola);
+  background: rgb(221, 76, 76);
+  color: white;
+  border-radius: 40px
 }
 
 .contact-icon-box.linkedin {
-  background-color: #0a66c2;
+  background: #0077B5;
   color: white;
 }
 
 .contact-icon-box.github {
-  background-color: #000;
+  background: rgb(74, 167, 74);
   color: white;
+  border-radius: 40px
+}
+
+.contact-icon-box.rg {
+  background: #00A8A7;
+  color: white;
+}
+
+.contact-icon-box.gs {
+  background: transparent;
+  color: #0266C8;
+  font-size: 30px;
 }
 
 .contact-label {
