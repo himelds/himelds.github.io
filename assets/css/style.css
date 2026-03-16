@@ -1920,89 +1920,80 @@ body { color: var(--text-1); background: var(--bg-base); }
 .card-reveal:nth-child(n+9) { transition-delay: 0.60s; }
 
 /* ══════════════════════════════════════════
-   SPECIFIC FIXES FOR MOBILE & TABLET (Force Override)
+   FINAL RESPONSIVE FIX (SIDEBAR, STATS & FOOTER)
 ══════════════════════════════════════════ */
 
 @media (max-width: 1023px) {
   /* ১. সাইডবার নির্দিষ্ট অংশ পর্যন্ত দেখানো (Peek-in height) */
   .sidebar {
-    max-height: 145px !important; /* যাতে Open to role এর অংশটি পূর্ণাঙ্গ ও সুন্দর দেখায় */
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-  }
-  .sidebar.active {
-    max-height: 850px !important;
-  }
-
-  /* ২. ৩৭৫ পিক্সেল উইডথ-এ Nav Menu ফিক্স */
-  .navbar {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    z-index: 1000 !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+    max-height: 145px !important; /*Avatar এবং Role ব্যাজ পর্যন্ত দেখা যাবে */
+    overflow: hidden !important;
+    transition: max-height 0.4s ease-in-out !important;
+    margin-bottom: 0 !important;
   }
   
-  .navbar-list {
-    display: flex !important;
-    justify-content: space-around !important;
-    padding: 10px 5px !important;
-    gap: 0 !important;
+  .sidebar.active {
+    max-height: 850px !important; /* 'Show Contacts' টিপলে পুরোটা খুলবে */
   }
 
-  .navbar-link {
-    font-size: 11px !important; /* ছোট ডিভাইসের জন্য ফন্ট সাইজ অ্যাডজাস্ট */
-    padding: 8px 5px !important;
-    min-width: 60px;
-    text-align: center;
-  }
-
-  /* ৩. Footer ফিক্স (পুরোটা দেখার জন্য) */
-  .site-footer {
-    padding-bottom: 80px !important; /* যাতে নিচ থেকে নববার কভার না করে */
-    margin-top: 40px !important;
-    display: block !important;
-  }
-  .footer-top-inner, .footer-bottom-inner {
-    padding: 20px 15px !important;
-  }
-}
-
-/* ৪. About Me স্ট্যাটিস্টিক্যাল চার্ট ফিক্স */
-@media (max-width: 600px) {
+  /* ২. স্ট্যাটিস্টিকস বার ফিক্স (About Me সেকশন) */
   .about-stats {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* ২ কলামে সুন্দর গ্রিড */
-    gap: 15px !important;
+    display: flex !important;
+    flex-wrap: wrap !important; /* আইটেমগুলো ভেঙ্গে নিচে আসবে */
+    justify-content: space-around !important;
     background: var(--bg-mid) !important;
-    padding: 15px !important;
-    border-radius: 12px !important;
+    border: 1px solid var(--border) !important;
+    padding: 15px 5px !important;
+    gap: 10px !important;
+    width: 100% !important;
   }
 
   .stat-item {
-    border-bottom: 1px solid var(--border);
-    padding: 10px 0 !important;
-  }
-  
-  /* ৩টি আইটেম হলে শেষেরটিকে ফুল উইডথ করা */
-  .stat-item:last-child {
-    grid-column: span 2;
-    border-bottom: none;
+    flex: 1 1 30% !important; /* ৩টি আইটেম পাশাপাশি থাকার চেষ্টা করবে */
+    min-width: 80px !important;
+    text-align: center !important;
+    padding: 5px !important;
   }
 
   .stat-divider {
-    display: none !important; /* ডিভাইডার দরকার নেই */
+    display: none !important; /* মোবাইলে ডিভাইডারের প্রয়োজন নেই */
   }
 
-  /* ৫. মেনু টেক্সট আরও ছোট করা ৩৭৫ পিক্সেল বা তার নিচে */
-  @media (max-width: 380px) {
-    .navbar-link {
-      font-size: 10px !important;
-      padding: 8px 2px !important;
-    }
+  /* ৩. ফুটার ফিক্স (পুরোটা দেখার জন্য এবং নববার থেকে দূরে রাখা) */
+  .site-footer {
+    padding-bottom: 90px !important; /* নববার থেকে ফুটারের দূরত্ব বাড়াবে */
+    margin-top: 50px !important;
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-top-inner, .footer-bottom-inner {
+    padding: 20px 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 15px !important;
+  }
+
+  .footer-cta {
+    align-items: center !important;
+  }
+
+  .footer-cta-icons {
+    justify-content: center !important;
+  }
+}
+
+/* ৪. অতি ক্ষুদ্র মোবাইলের জন্য (iPhone SE টাইপ - ৩৭৫px) */
+@media (max-width: 375px) {
+  .stat-item {
+    flex: 1 1 40% !important; /* খুব ছোট স্ক্রিনে ২টি করে আইটেম */
+  }
+  
+  .about-lead {
+    font-size: 1.1rem !important;
   }
 }
