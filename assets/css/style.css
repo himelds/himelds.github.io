@@ -1920,80 +1920,101 @@ body { color: var(--text-1); background: var(--bg-base); }
 .card-reveal:nth-child(n+9) { transition-delay: 0.60s; }
 
 /* ══════════════════════════════════════════
-   FINAL RESPONSIVE FIX (SIDEBAR, STATS & FOOTER)
+   ULTIMATE MOBILE FIX (SIDEBAR, STATS, NAVBAR & FOOTER)
 ══════════════════════════════════════════ */
 
 @media (max-width: 1023px) {
-  /* ১. সাইডবার নির্দিষ্ট অংশ পর্যন্ত দেখানো (Peek-in height) */
+  /* ১. সাইডবার হাইট ফিক্স (Open to roles পর্যন্ত দেখা যাবে) */
   .sidebar {
-    max-height: 145px !important; /*Avatar এবং Role ব্যাজ পর্যন্ত দেখা যাবে */
+    max-height: 145px !important; 
     overflow: hidden !important;
-    transition: max-height 0.4s ease-in-out !important;
-    margin-bottom: 0 !important;
+    transition: max-height 0.4s ease !important;
   }
-  
   .sidebar.active {
-    max-height: 850px !important; /* 'Show Contacts' টিপলে পুরোটা খুলবে */
+    max-height: 850px !important;
   }
 
-  /* ২. স্ট্যাটিস্টিকস বার ফিক্স (About Me সেকশন) */
-  .about-stats {
+  /* ২. মোবাইল নেভিগেশন বার (Bottom Fixed) */
+  .navbar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 20px 20px 0 0 !important;
+    z-index: 9999 !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  .navbar-list {
     display: flex !important;
-    flex-wrap: wrap !important; /* আইটেমগুলো ভেঙ্গে নিচে আসবে */
     justify-content: space-around !important;
-    background: var(--bg-mid) !important;
-    border: 1px solid var(--border) !important;
-    padding: 15px 5px !important;
+    padding: 10px 5px !important;
+    list-style: none !important;
+  }
+
+  .navbar-link {
+    font-size: 11px !important;
+    padding: 8px 4px !important;
+    color: var(--text-3) !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .navbar-link.active {
+    color: var(--gold) !important;
+    background: var(--gold-glow) !important;
+    font-weight: 700 !important;
+  }
+
+  /* ৩. স্ট্যাটিস্টিকস বার ফিক্স (About Me) */
+  .about-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
     gap: 10px !important;
+    padding: 15px 5px !important;
     width: 100% !important;
   }
 
   .stat-item {
-    flex: 1 1 30% !important; /* ৩টি আইটেম পাশাপাশি থাকার চেষ্টা করবে */
-    min-width: 80px !important;
     text-align: center !important;
-    padding: 5px !important;
+    min-width: 0 !important;
+  }
+
+  .stat-number {
+    font-size: 1.4rem !important;
+  }
+
+  .stat-label {
+    font-size: 0.65rem !important;
   }
 
   .stat-divider {
-    display: none !important; /* মোবাইলে ডিভাইডারের প্রয়োজন নেই */
+    display: none !important;
   }
 
-  /* ৩. ফুটার ফিক্স (পুরোটা দেখার জন্য এবং নববার থেকে দূরে রাখা) */
+  /* ৪. ফুটার ফিক্স (যাতে মেনুর নিচে ঢাকা না পড়ে) */
   .site-footer {
-    padding-bottom: 90px !important; /* নববার থেকে ফুটারের দূরত্ব বাড়াবে */
+    padding-bottom: 100px !important; /* নেভিগেশন বারের জন্য পর্যাপ্ত জায়গা */
     margin-top: 50px !important;
-    position: relative !important;
-    z-index: 1 !important;
     display: block !important;
-    width: 100% !important;
-  }
-
-  .footer-top-inner, .footer-bottom-inner {
-    padding: 20px 15px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 15px !important;
-  }
-
-  .footer-cta {
-    align-items: center !important;
-  }
-
-  .footer-cta-icons {
-    justify-content: center !important;
   }
 }
 
-/* ৪. অতি ক্ষুদ্র মোবাইলের জন্য (iPhone SE টাইপ - ৩৭৫px) */
+/* ৩৭৫px এবং ছোট ডিভাইসের জন্য অতিরিক্ত ফিক্স */
 @media (max-width: 375px) {
-  .stat-item {
-    flex: 1 1 40% !important; /* খুব ছোট স্ক্রিনে ২টি করে আইটেম */
+  .navbar-link {
+    font-size: 10px !important;
   }
   
-  .about-lead {
-    font-size: 1.1rem !important;
+  .about-stats {
+    grid-template-columns: 1fr 1fr !important; /* আরও ছোট স্ক্রিনে ২ কলাম */
+  }
+  
+  .stat-item:last-child {
+    grid-column: span 2;
   }
 }
