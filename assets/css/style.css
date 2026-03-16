@@ -1919,3 +1919,90 @@ body { color: var(--text-1); background: var(--bg-base); }
 .card-reveal:nth-child(8) { transition-delay: 0.56s; }
 .card-reveal:nth-child(n+9) { transition-delay: 0.60s; }
 
+/* ══════════════════════════════════════════
+   RESPONSIVE OVERRIDES (মোবাইল ও ট্যাবের জন্য)
+══════════════════════════════════════════ */
+
+@media (max-width: 1023px) {
+  /* ১. মেইন লেআউট ফিক্স */
+  main {
+    margin: 10px 10px 80px !important; /* নিচে মেনুর জন্য জায়গা রাখা */
+    padding: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* ২. সাইডবার ফিক্স (মোবাইলে এটি উপরে থাকবে) */
+  .sidebar {
+    width: 100% !important;
+    max-width: none !important;
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .sidebar-inner {
+    padding: 15px;
+  }
+
+  /* ৩. কার্ড এবং কন্টেন্ট প্যাডিং কমানো */
+  article {
+    padding: 15px !important;
+    border-radius: 15px !important;
+  }
+
+  /* ৪. প্রোজেক্ট এবং সার্টিফিকেট গ্রিড ঠিক করা */
+  .project-grid, .cert-grid, .featured-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 15px !important;
+  }
+
+  /* ৫. নিচের নেভিগেশন বারকে টাচ-ফ্রেন্ডলি করা */
+  .navbar {
+    border-radius: 15px 15px 0 0 !important;
+    height: 65px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-list {
+    width: 100%;
+    justify-content: space-around !important;
+    padding: 0 5px !important;
+  }
+
+  .navbar-link {
+    font-size: 12px !important;
+    padding: 8px 12px !important;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* ৬. ছোট মোবাইল ফোনের জন্য (Small Devices) */
+@media (max-width: 600px) {
+  .about-stats {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100% !important;
+  }
+
+  .stat-item {
+    padding: 10px 15px !important;
+    flex: 1 1 40%;
+  }
+
+  .stat-divider {
+    display: none; /* ডিভাইডার লুকিয়ে ফেলা */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important; /* কন্টাক্ট ফরম ১ কলাম */
+  }
+
+  .h2.article-title {
+    font-size: 1.6rem !important;
+  }
+}
