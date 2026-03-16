@@ -30,24 +30,10 @@ $$('[data-goto]').forEach(b => b.addEventListener('click', () => navigateTo(b.da
 function initLoader() {
   const loader = document.getElementById('site-loader');
   if (!loader) return;
-
-  function hideLoader() {
-    loader.classList.add('hidden');
-  }
-
-  // Hide as soon as the DOM is interactive (fonts/images not required)
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    // Already ready — hide on next tick so the page paints first
-    setTimeout(hideLoader, 80);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => setTimeout(hideLoader, 80));
-  }
-
-  // Also hide on full load if it happens sooner somehow
-  window.addEventListener('load', hideLoader);
-
-  // Hard cap: never show loader for more than 800ms no matter what
-  setTimeout(hideLoader, 800);
+  const hide = () => loader.classList.add('hidden');
+  document.addEventListener('DOMContentLoaded', hide);
+  window.addEventListener('load', hide);
+  setTimeout(hide, 500);
 }
 
 /* ══════════════════════════════
