@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Himel Das - Portfolio. Graduate in Artificial Intelligence and Data Analytics.">
+    <meta property="og:title" content="Himel Das | AI & Data Science Portfolio">
+    <meta property="og:description" content="Turning Data into Intelligent Solutions. Discover my projects in Machine Learning, Time Series Analysis, and Data Analytics.">
+    <meta property="og:image" content="https://himelds.github.io/assets/documents/my-avatar.png">
+    <meta property="og:url" content="https://himelds.github.io/">
+    <title>Himel Das | AI & Data Science Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Himel<span>.</span></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#resume" class="nav__link">Resume</a></li>
+                    <li class="nav__item"><a href="#publications" class="nav__link">Publications</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#certificates" class="nav__link">Certificates</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link nav__link--btn">Contact</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- HERO -->
+        <section class="hero section reveal" id="hero">
+            <div class="hero__container container grid">
+                <div class="hero__data">
+                    <h1 class="hero__title">
+                        Hi, I'm <span class="highlight">Himel Das</span>
+                    </h1>
+                    <div class="hero__subtitle-wrapper">
+                        <h2 class="hero__subtitle">
+                            I am an <span class="typing-text"></span><span class="cursor">|</span>
+                        </h2>
+                    </div>
+                    <p class="hero__description">
+                        Turning Data into Intelligent Solutions with a Focus on </br> Real-World Impact.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="./assets/documents/Himel Das_CV.pdf" target="_blank" class="btn btn--primary">
+                            <i class="fas fa-external-link-alt"></i> View CV
+                        </a>
+                        <a href="#projects" class="btn btn--outline">View Work</a>
+                    </div>
+
+                    <div class="hero__social">
+                        <a href="mailto:himeldas077@gmail.com" class="hero__social-link" title="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/dashimel" target="_blank" class="hero__social-link"
+                            title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/himelds" target="_blank" class="hero__social-link" title="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.researchgate.net/profile/Himel-Das" target="_blank"
+                            class="hero__social-link" title="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="https://scholar.google.com/citations?user=6tu0eugAAAAJ&hl" target="_blank"
+                            class="hero__social-link" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+
+                <div class="hero__image-wrapper reveal--fade">
+                    <div class="hero__profile">
+                        <img src="./assets/documents/my-avatar.png" alt="Himel Das Profile" class="hero__img"
+                            id="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about section reveal" id="about">
+            <div class="container">
+                <h2 class="section__title">About me</h2>
+                <div class="about__content">
+                    <p class="about__text">
+                        I hold an M.Sc. in Applied Artificial Intelligence and Data Analytics from the University of
+                        Bradford,
+                        with a background in Electrical and Electronic Engineering. My work focuses on applying
+                        artificial intelligence and data-driven methodologies to solve complex, real-world problems.
+                        I am particularly interested in machine learning, intelligent data systems, and
+                        the practical deployment of AI in impactful domains. I have experience analyzing real-world
+                        datasets,
+                        developing predictive models, and transforming data into actionable insights to support
+                        decision-making. </br></br>
+                        My long-term goal is to advance applied AI research, with a strong interest in healthcare
+                        analytics,
+                        including AI-driven diagnosis, prognosis, and intelligent clinical decision support systems,
+                        along with broader applications in automation and intelligent systems.
+                    </p>
+
+                    <h3 class="about__subtitle">Research Interests</h3>
+                    <ul class="about__interests-list">
+                        <li class="about__interests-item"><i class="fas fa-microscope"></i> Applied Artificial
+                            Intelligence</li>
+                        <li class="about__interests-item"><i class="fas fa-brain"></i> Machine Learning & Predictive
+                            Modeling</li>
+                        <li class="about__interests-item"><i class="fas fa-heartbeat"></i> AI in Healthcare (Diagnosis,
+                            Prognosis & CDSS)</li>
+                        <li class="about__interests-item"><i class="fas fa-database"></i> Intelligent Data Systems &
+                            Decision Support</li>
+                        <li class="about__interests-item"><i class="fas fa-chart-line"></i> Time Series Analysis</li>
+                        <li class="about__interests-item"><i class="fas fa-robot"></i> Automation & Autonomous Systems
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skills section reveal" id="skills">
+            <div class="container">
+                <div class="section__header-block mb-3">
+                    <h2 class="section__title">Technical Skills</h2>
+                    <p class="section__subtitle">Technologies and tools I use to build intelligent systems.</p>
+                </div>
+
+                <div class="grid layout-4-col skills__container">
+                    <div class="skills__card reveal--slide-up">
+                        <div class="skills__card-header">
+                            <div class="skills__icon"><i class="fas fa-terminal"></i></div>
+                            <h3 class="skills__title">Programming</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Python</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> SQL</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> R</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> MATLAB</div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card reveal--slide-up" style="transition-delay: 50ms;">
+                        <div class="skills__card-header">
+                            <div class="skills__icon"><i class="fas fa-robot"></i></div>
+                            <h3 class="skills__title">ML / AI</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Scikit-learn</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> PyTorch</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> TensorFlow</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Feature Eng.</div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card reveal--slide-up" style="transition-delay: 100ms;">
+                        <div class="skills__card-header">
+                            <div class="skills__icon"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="skills__title">Data & Viz</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Pandas / NumPy</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Matplotlib</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Power BI</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Excel</div>
+                        </div>
+                    </div>
+
+                    <div class="skills__card reveal--slide-up" style="transition-delay: 150ms;">
+                        <div class="skills__card-header">
+                            <div class="skills__icon"><i class="fas fa-tools"></i></div>
+                            <h3 class="skills__title">Tools</h3>
+                        </div>
+                        <div class="skills__list">
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Git / GitHub</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> MySQL</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> Streamlit</div>
+                            <div class="skills__item"><i class="fas fa-check-circle"></i> FastAPI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESUME -->
+        <section class="resume section reveal" id="resume">
+            <div class="container">
+                <div class="section__header-block mb-3">
+                    <h2 class="section__title">Resume</h2>
+                </div>
+                <div class="grid layout-2-col">
+                    <div class="timeline reveal--slide-left">
+                        <h3 class="timeline__header"><i class="fas fa-graduation-cap"></i> Education</h3>
+                        <div class="timeline__item">
+                            <h4 class="timeline__title">University of Bradford, UK</h4>
+                            <span class="timeline__subtitle">M.Sc. in Applied AI and Data Analytics</span>
+                            <span class="timeline__subtitle">January 2024 — March 2025</span>
+                            <p class="timeline__text">Focused on data analysis, machine learning, and data
+                                visualization,
+                                with an emphasis on applying AI techniques to real-world problems.
+                                Completed projects involving predictive modeling, time series analysis, and
+                                business intelligence, developing practical skills in extracting insights and
+                                supporting data-driven decision-making.
+                            </p>
+                        </div>
+                        <div class="timeline__item">
+                            <h4 class="timeline__title">Aarhus University, Denmark</h4>
+                            <span class="timeline__subtitle">Summer School</span>
+                            <span class="timeline__subtitle">July 2024 – August 2024</span>
+                            <p class="timeline__text">Attended "Information Visualization" and "Making Sense of Data in
+                                R" courses,
+                                supported by a Turing Scheme UK grant. The first course covered advanced techniques
+                                in visualizing data to convey information effectively. And the other course focused
+                                on data manipulation and analysis using R programming.</p>
+                        </div>
+                        <div class="timeline__item">
+                            <h4 class="timeline__title">University of Science and Technology Chittagong (USTC)</h4>
+                            <span class="timeline__subtitle">BSc in Electrical and Electronic Engineering</span>
+                            <span class="timeline__subtitle">January 2015 – December 2018</span>
+                            <p class="timeline__text">This program provided a strong foundation in electrical circuits,
+                                electrical machines, power systems electronics, signal processing, and control systems.
+                                It also introduced me to programming and data analysis, which sparked my interest in AI
+                                and data science.
+                                During my studies, I participated in technical clubs and held a leadership role
+                                in the FSET Debate Club.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline reveal--slide-right">
+                        <h3 class="timeline__header"><i class="fas fa-briefcase"></i> Experience</h3>
+                        <div class="timeline__item">
+                            <h4 class="timeline__title">Welcome Week Ambassador</h4>
+                            <span class="timeline__subtitle">University of Bradford | Aug – Oct 2024 & Jan 2025</span>
+                            <p class="timeline__text">• Assisted 400+ new students with enrollment and onboarding.<br>•
+                                Managed document verification processes.</p>
+                        </div>
+                        <div class="timeline__item">
+                            <h4 class="timeline__title">Graduate Engineering Trainee</h4>
+                            <span class="timeline__subtitle">TICI, Narsingdi, Bangladesh | Oct – Nov 2018</span>
+                            <p class="timeline__text">Internship covering Electrical Safety, Power Generation, and
+                                Instrumentation & Control Engineering.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section class="publications section reveal" id="publications">
+            <div class="container">
+                <div class="section__header-block mb-3">
+                    <h2 class="section__title">Publications</h2>
+                    <p class="section__subtitle">Peer-reviewed conference papers and research contributions.</p>
+                </div>
+                <div class="grid layout-1-col">
+                    <div class="publication__card reveal--slide-up">
+                        <div class="pub__year">2019</div>
+                        <div class="pub__content">
+                            <h3 class="pub__title">Design & Implementation of Voice Command Based Bipedal Surveillance
+                                Robot</h3>
+                            <p class="pub__authors"><strong>H. Das</strong>, H. Chakraborty and M. S. Uddin Chowdhury
+                            </p>
+                            <p class="pub__venue"><em>ICASERT 2019</em>, Dhaka, Bangladesh, pp. 1-5.</p>
+                            <div class="pub__footer">
+                                <span class="pub__doi">DOI: 10.1109/ICASERT.2019.8934551</span>
+                                <a href="https://ieeexplore.ieee.org/document/8934551" target="_blank"
+                                    class="pub__link">View IEEE <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publication__card reveal--slide-up">
+                        <div class="pub__year">2018</div>
+                        <div class="pub__content">
+                            <h3 class="pub__title">Humanoid Explorer Robot: Design and Fabrication</h3>
+                            <p class="pub__authors">A. Nath, G. Das, <strong>H. Das</strong>, M. N. Bin Nezam and K. M.
+                                Kabir</p>
+                            <p class="pub__venue"><em>IC4ME2 2018</em>, Rajshahi, pp. 1-4.</p>
+                            <div class="pub__footer">
+                                <span class="pub__doi">DOI: 10.1109/IC4ME2.2018.8465644</span>
+                                <a href="https://ieeexplore.ieee.org/document/8465644" target="_blank"
+                                    class="pub__link">View IEEE <i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="projects section reveal" id="projects">
+            <div class="container">
+                <div class="section__header-block mb-3">
+                    <h2 class="section__title">Featured Projects</h2>
+                    <p class="section__subtitle">A selection of my recent works in ML, Data Analysis, and Business
+                        Intelligence.</p>
+                </div>
+
+                <div class="portfolio__container grid">
+                    <!-- Project Cards with pure IDs -->
+                    <article class="portfolio__card reveal--slide-up btn-details" data-project-id="p-bikeshare">
+                        <div class="portfolio__img-wrapper ml-theme">
+                            <div class="portfolio__tag">Machine Learning</div>
+                            <div class="portfolio__explore"><i class="fas fa-search-plus"></i> Explore</div>
+                        </div>
+                        <div class="portfolio__content">
+                            <h3 class="portfolio__title">London Bike-Sharing Prediction</h3>
+                            <p class="portfolio__description">Predicted hourly bike-sharing demand using machine
+                                learning and
+                                time series features, enabling data-driven decision-making for urban mobility systems.
+                            </p>
+                            <div class="portfolio__tech">
+                                <span>Python</span><span>Machine Learning</span><span>Time Series</span><span>Feature
+                                    Engineering</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card reveal--slide-up btn-details" style="transition-delay: 100ms;"
+                        data-project-id="p-solar">
+                        <div class="portfolio__img-wrapper ml-theme">
+                            <div class="portfolio__tag">Machine Learning</div>
+                            <div class="portfolio__explore"><i class="fas fa-search-plus"></i> Explore</div>
+                        </div>
+                        <div class="portfolio__content">
+                            <h3 class="portfolio__title">Solar Flare Classification</h3>
+                            <p class="portfolio__description">Classified solar flare intensity using machine learning to
+                                analyze patterns in space weather data.</p>
+                            <div class="portfolio__tech">
+                                <span>Python</span><span>Scikit-Learn</span><span>Machine
+                                    Learning</span><span>Classification</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card reveal--slide-up btn-details" style="transition-delay: 200ms;"
+                        data-project-id="p-traffic">
+                        <div class="portfolio__img-wrapper data-theme">
+                            <div class="portfolio__tag">Data Visualization</div>
+                            <div class="portfolio__explore"><i class="fas fa-search-plus"></i> Explore</div>
+                        </div>
+                        <div class="portfolio__content">
+                            <h3 class="portfolio__title">UK Traffic Accidents Analysis</h3>
+                            <p class="portfolio__description">Explored UK traffic accident data to uncover patterns
+                                influencing accident severity and road safety risks.</p>
+                            <div class="portfolio__tech">
+                                <span>Python</span><span>Pandas</span><span>Seaborn</span><span>EDA</span><span>Data
+                                    Visualization</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card reveal--slide-up btn-details" style="transition-delay: 300ms;"
+                        data-project-id="p-b360">
+                        <div class="portfolio__img-wrapper bi-theme">
+                            <div class="portfolio__tag">Power BI</div>
+                            <div class="portfolio__explore"><i class="fas fa-search-plus"></i> Explore</div>
+                        </div>
+                        <div class="portfolio__content">
+                            <h3 class="portfolio__title">Business 360 Dashboard</h3>
+                            <p class="portfolio__description">End-to-end multi-functional BI dashboard integrating
+                                finance, sales, and operations metrics.</p>
+                            <div class="portfolio__tech">
+                                <span>PowerBI</span><span>DAX</span><span>SQL</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="text-center mt-3 reveal">
+                    <a href="https://github.com/himelds" target="_blank" class="btn btn--primary">
+                        View All Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section class="certificates section reveal" id="certificates">
+            <div class="container">
+                <div class="section__header-block mb-3">
+                    <h2 class="section__title">Certificates</h2>
+                    <p class="section__subtitle">Professional certifications and continuous learning.</p>
+                </div>
+
+                <div class="cert__container grid layout-3-col">
+                    <article class="cert__card reveal--slide-up btn-cert-details" data-cert-id="c-python">
+                        <div class="cert__icon"><i class="fas fa-certificate"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">Python: Beginner to Advanced For Data Professionals</h3>
+                            <p class="cert__provider">Codebasics · 2024</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+
+                    <article class="cert__card reveal--slide-up btn-cert-details" style="transition-delay: 50ms;"
+                        data-cert-id="c-sql">
+                        <div class="cert__icon"><i class="fas fa-database"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">SQL Beginner to Advanced For Data Professionals</h3>
+                            <p class="cert__provider">Codebasics · 2024</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+
+                    <article class="cert__card reveal--slide-up btn-cert-details" style="transition-delay: 100ms;"
+                        data-cert-id="c-powerbi">
+                        <div class="cert__icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">Power BI Data Analytics Bootcamp</h3>
+                            <p class="cert__provider">Codebasics · 2024</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+
+                    <article class="cert__card reveal--slide-up btn-cert-details" style="transition-delay: 150ms;"
+                        data-cert-id="c-excel">
+                        <div class="cert__icon"><i class="fas fa-file-excel"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">Excel: Mother of Business Intelligence</h3>
+                            <p class="cert__provider">Codebasics · 2024</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+
+                    <article class="cert__card reveal--slide-up btn-cert-details" style="transition-delay: 200ms;"
+                        data-cert-id="c-google">
+                        <div class="cert__icon"><i class="fab fa-google"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">Google Data Analytics Professional Certificate</h3>
+                            <p class="cert__provider">Google · Coursera · 2023</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+
+                    <article class="cert__card reveal--slide-up btn-cert-details" style="transition-delay: 250ms;"
+                        data-cert-id="c-matlab">
+                        <div class="cert__icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="cert__content">
+                            <h3 class="cert__title">Introduction to Programming with MATLAB</h3>
+                            <p class="cert__provider">Coursera · 2022</p>
+                        </div>
+                        <div class="cert__overlay"><i class="fas fa-search"></i> View</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact section reveal" id="contact">
+            <div class="container">
+                <h2 class="section__title text-center">Let's Work Together</h2>
+                <p class="contact__desc text-center">Open to AI & data roles, research collaborations, and new
+                    opportunities.</p>
+                <div class="contact__cards grid">
+                    <a href="mailto:himeldas077@gmail.com" class="contact__card">
+                        <i class="fas fa-envelope contact__icon"></i>
+                        <h4 class="contact__card-title">Email Me</h4>
+                        <p class="contact__data">himeldas077@gmail.com</p>
+                    </a>
+                    <a href="tel:+8801515222525" class="contact__card">
+                        <i class="fas fa-phone contact__icon"></i>
+                        <h4 class="contact__card-title">Call / WhatsApp</h4>
+                        <p class="contact__data">+880 1515 222525</p>
+                    </a>
+                    <div class="contact__card">
+                        <i class="fas fa-map-marker-alt contact__icon"></i>
+                        <h4 class="contact__card-title">Location</h4>
+                        <p class="contact__data">Chittagong, Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <h3 class="footer__title">Himel Das</h3>
+                <p class="footer__subtitle">AI & Data Science Professional</p>
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/dashimel" target="_blank" class="footer__social-link"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/himelds" target="_blank" class="footer__social-link"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.researchgate.net/profile/Himel-Das" target="_blank"
+                        class="footer__social-link"><i class="fab fa-researchgate"></i></a>
+                </div>
+                <p class="footer__copy">&#169; 2026 Himel Das. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SUPER PREMIUM PROJECT MODAL (Matches CodeBasics Layout) -->
+    <div class="proj-modal" id="project-modal">
+        <div class="proj-modal__overlay" id="modal-overlay"></div>
+        <div class="proj-modal__content">
+            <div class="proj-modal__header">
+                <h2 class="proj-modal__main-title" id="pm-header-title">Project Title</h2>
+                <button class="proj-modal__close" id="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="proj-modal__body">
+                <!-- TOP ROW: Details & Carousel -->
+                <div class="pm-row pm-row--top">
+                    <!-- Left Col -->
+                    <div class="pm-col pm-col--left">
+                        <div class="pm-badge-row">
+                            <span class="pm-badge" id="pm-badge">Machine Learning</span>
+                            <i class="fas fa-code pm-icon-logo" id="pm-badge-icon"></i>
+                        </div>
+                        <h3 class="pm-title" id="pm-title">Project Title</h3>
+                        <p class="pm-domain">Domain/Function: <span id="pm-domain" class="pm-highlight">Predictive
+                                Analytics</span></p>
+                        <p class="pm-desc-short" id="pm-desc-short">Short description wrapping to text...</p>
+
+                        <div class="pm-action-row">
+                            <a href="#" target="_blank" class="pm-action-link" id="pm-github-link">
+                                <i class="fab fa-github"></i> <span class="pm-action-text">GitHub</span>
+                            </a>
+                            <a href="#" target="_blank" class="pm-action-link" id="pm-linkedin-link"
+                                style="display: none;">
+                                <i class="fab fa-linkedin"></i> <span class="pm-action-text">LinkedIn Post</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Col -->
+                    <div class="pm-col pm-col--right">
+                        <div class="pm-carousel">
+                            <div class="pm-carousel-inner" id="pm-carousel-inner">
+                                <!-- Slides injected via JS -->
+                            </div>
+                            <!-- Controls -->
+                            <button class="pm-carousel-nav prev" id="pm-carousel-prev"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <button class="pm-carousel-nav next" id="pm-carousel-next"><i
+                                    class="fas fa-chevron-right"></i></button>
+                            <div class="pm-carousel-caption" id="pm-carousel-caption">Caption text</div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="pm-divider">
+
+                <!-- BOTTOM ROW: Details & Video -->
+                <div class="pm-row pm-row--bottom" id="pm-bottom-row">
+                    <div class="pm-col pm-col--left">
+                        <h4 class="pm-subtitle">Project Details</h4>
+                        <div class="pm-desc-long" id="pm-desc-long">
+                            <!-- Long HTML description injected here -->
+                        </div>
+                    </div>
+                    <div class="pm-col pm-col--right" id="pm-video-container">
+                        <h4 class="pm-subtitle">Project video</h4>
+                        <div class="pm-video-wrapper">
+                            <iframe id="pm-video" class="pm-video-iframe" src="" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERTIFICATE MODAL -->
+    <div class="proj-modal" id="cert-modal">
+        <div class="proj-modal__overlay" id="cert-modal-overlay"></div>
+        <div class="proj-modal__content cert-modal-content">
+            <div class="proj-modal__header">
+                <h2 class="proj-modal__main-title" id="cm-header-title">Certificate Details</h2>
+                <button class="proj-modal__close" id="cert-modal-close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="proj-modal__body cert-modal-body">
+                <div class="cm-layout">
+                    <div class="cm-left">
+                        <h3 class="cm-title" id="cm-title">Certificate Name</h3>
+                        <p class="cm-provider" id="cm-provider">Provider · Year</p>
+
+                        <div class="cm-skills-wrap">
+                            <h4 class="cm-subtitle">Skills Covered</h4>
+                            <div class="cm-skills" id="cm-skills-container">
+                                <!-- Tags injected via JS -->
+                            </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn--primary cm-verify-btn" id="cm-verify-link">
+                            <i class="fas fa-check-circle"></i> Verify Certificate
+                        </a>
+                    </div>
+                    <div class="cm-right">
+                        <div class="cm-image-wrapper">
+                            <img src="" alt="Certificate" id="cm-image" class="cm-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
