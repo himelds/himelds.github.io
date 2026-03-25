@@ -10,7 +10,7 @@ window.addEventListener('load', () => {
 /*==================== TYPING ANIMATION ====================*/
 const typingTextElement = document.querySelector('.typing-text');
 if (typingTextElement !== null) {
-    const titles = ["a Data Scientist", "an AI Research Enthusiastic"];
+    const titles = ["Data Scientist", "AI Research Enthusiastic"];
     let titleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
