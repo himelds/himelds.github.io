@@ -120,14 +120,15 @@ const projectData = {
         icon: 'fa-brain',
         title: 'London Bike-Sharing Prediction',
         domain: 'Time Series Forecasting · Machine Learning · Urban Mobility',
-        descShort: 'Developed a machine learning-based forecasting system to predict hourly bike-sharing demand in London using environmental and temporal data, enabling data-driven operational planning and resource optimization.',
+        descShort: 'Developed an end-to-end machine learning pipeline and interactive Streamlit Dashboard to predict demand for London\'s bike-sharing system.',
         github: 'https://github.com/himelds/London_Bike_Sharing_Project',
+        streamlit: 'https://londonbikesharingproject.streamlit.app/',
         images: [
             { src: './assets/documents/bike_shares_across_month.png', alt: 'Bike sharing counts per month' },
             { src: './assets/documents/Actual_vs_predicted_value.png', alt: 'Actual vs predicted value' },
             { src: './assets/documents/Performance_metrics.png', alt: 'Performance metrics' }
         ],
-        descLong: '<ul><li><strong>Project Overview:</strong> This project focuses on forecasting hourly demand for London’s Santander bike-sharing system using real-world environmental and temporal data. The objective was to develop machine learning models to accurately predict bike usage and identify key factors influencing demand.</li><li><strong>Data Processing & Analysis:</strong> I performed comprehensive data preprocessing, including feature engineering from timestamps, encoding categorical variables, and validating outliers. Exploratory data analysis revealed strong relationships between demand and factors such as temperature, weather conditions, and time-based patterns.</li><li><strong>Model Development:</strong> Multiple regression models were developed and evaluated, including Linear Regression, Random Forest, Gradient Boosting, and AdaBoost. Gradient Boosting achieved the highest performance (R² ≈ 0.94), while Random Forest was selected as the preferred model for deployment due to its robustness and interpretability.</li><li><strong>Impact & Applications:</strong> The results demonstrate that machine learning can effectively model urban mobility demand. The developed solution can support real-world applications such as demand forecasting, resource allocation, and operational decision-making in bike-sharing systems.</li></ul>',
+        descLong: '<ul><li><strong>Project Overview:</strong> An end-to-end machine learning project focused on predicting demand for London\'s Santander bike-sharing system using real-world environmental and temporal data. It features a modular MLOps pipeline and an interactive Streamlit Dashboard for real-time predictions.</li><li><strong>Data Analysis & Insights:</strong> Analyzed 17,414 hourly entries, extracting temporal features and validating outliers. Key findings show bike rentals peak heavily during the morning (8 AM) and evening commutes (5-6 PM), and demand consistently increases as temperatures rise.</li><li><strong>Model Performance:</strong> Evaluated several regression models. While Gradient Boosting initially performed well, the deployed Random Forest model achieved a superior R² Score of 0.957 after final pipeline optimizations, proving highly robust and interpretable.</li><li><strong>Project Architecture & Impact:</strong> Transformed from an experimental notebook into a professional ML repository featuring a zero-config cloud deployment that auto-trains the model if missing. These actionable insights support operational decisions like predictive bike allocation and resource optimization.</li></ul>',
         // video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Placeholder video
     },
     'p-solar': {
@@ -135,15 +136,17 @@ const projectData = {
         icon: 'fa-brain',
         title: 'Solar Flare Classification',
         domain: 'Machine Learning · Classification · Solar Flare Analysis',
-        descShort: 'Applied machine learning models to classify solar flare intensity and analyze key factors influencing space weather events using historical solar data.',
+        descShort: 'Developed a robust MLOps pipeline to classify solar flare intensity using historical data, handling severe class imbalance with SMOTE and utilizing SHAP for feature analysis.',
         github: 'https://github.com/himelds/Solar-Flare-Classification-Using-Machine-Learning',
+        streamlit: 'https://solarflareclassification.streamlit.app/',
         images: [
-            { src: './assets/documents/class trend based on time.png', alt: 'Class Trend Over Time' },
-            { src: './assets/documents/solar falre occurrences over time.png', alt: 'Solar Falre Occurrences Over Time' },
-            { src: './assets/documents/Random_forest_result.png', alt: 'Random forest Classification Matrix' },
-            { src: './assets/documents/Logistic_regression_result.png', alt: 'Logistic Regression Classification Matrix' }
+            { src: './assets/documents/media_solar_1.png', alt: 'Missing Values per Feature' },
+            { src: './assets/documents/media_solar_2.png', alt: 'Distribution of Solar Flare Classes' },
+            { src: './assets/documents/media_solar_3.png', alt: 'Flare Intensity by Class' },
+            { src: './assets/documents/media_solar_4.png', alt: 'Solar Flare Activity (1981 - 2017)' },
+            { src: './assets/documents/media_solar_5.png', alt: 'Correlation Heatmap of Numerical Features' }
         ],
-        descLong: '<ul><li><strong>Project Overview:</strong> This project focuses on classifying solar flare events using historical solar observation data to better understand factors influencing flare intensity and support space weather analysis. The dataset spans from 1981 to 2017 and includes multiple features related to solar flare characteristics such as timing, region, and intensity.</li><li><strong>Data Processing & Analysis:</strong> I performed data preprocessing by cleaning and structuring raw text-based data, converting time-related variables, and ensuring consistency across features. Feature engineering was applied to create additional variables such as flare duration and time-to-peak, improving the representation of flare behavior.</li><li><strong>Model Development:</strong> Two machine learning models, Logistic Regression and Random Forest, were developed to classify solar flare intensity levels. The models achieved classification accuracy of approximately 65%, with better performance on majority classes and challenges in predicting minority classes due to class imbalance.</li><li><strong>Key Findings & Impact:</strong> The analysis identified key predictors such as intensity, flare duration, and time-to-peak, and included visualizations to explore temporal trends and distribution patterns of solar activity. This project demonstrates the application of machine learning in scientific data analysis and its potential use in space weather monitoring and early warning systems.</li></ul>',
+        descLong: '<ul><li><strong>Project Overview:</strong> This project applies machine learning techniques to classify solar flare events and analyze key factors influencing flare intensity.</li><li><strong>Methodology:</strong> I developed a robust MLOps pipeline covering data preprocessing, feature engineering (e.g., Flare Duration, Time to Peak), and model training. To address severe class imbalance, I implemented the SMOTE algorithm. Multiple models were evaluated, including Random Forest, Decision Tree, Gradient Boosting, and Logistic Regression.</li><li><strong>Model Performance:</strong> The Random Forest Classifier outperformed other models, achieving the highest overall accuracy (~69%), and was automatically selected by the ModelTrainer for deployment. While it performed exceptionally well on the majority class (C-Class), minority classes remain challenging due to extreme data imbalance. Feature importance analysis using SHAP revealed that intensity, flare duration, and time-to-peak are the strongest predictors.</li><li><strong>Technologies & Applications:</strong> Built using Python, Scikit-learn, SMOTE, SHAP, Pandas, and Streamlit. The insights generated can support space weather forecasting systems, early warning systems for solar storms, and research on solar activity patterns.</li></ul>',
 
     },
     'p-traffic': {
@@ -181,6 +184,21 @@ const projectData = {
         ],
         descLong: '<ul><li><strong>Project Overview:</strong> This project focuses on building a comprehensive business intelligence dashboard for AtliQ Hardware, a global company operating in the computer hardware market. The objective was to transform raw business data into actionable insights to support decision-making across departments including Sales, Finance, Marketing, Supply Chain, and Executive management.</li><li><strong>Data Architecture:</strong> I connected to a MySQL database, performed data validation, and designed a structured data model using a snowflake schema. A custom date table was created using M language to enable time-based analysis. Using DAX, I developed calculated columns and measures to support key business metrics.</li><li><strong>Dashboard Design:</strong> The dashboard was designed with interactive features such as dynamic filtering, conditional formatting, bookmarks, and navigation buttons to enhance usability and user experience. Multiple views were created to provide role-specific insights for different business functions.</li><li><strong>Business Value:</strong> This solution enables stakeholders to monitor performance, identify trends, and make data-driven decisions, demonstrating the practical application of business intelligence and data visualization in a real-world business context.</li></ul>',
 
+    },
+    'p-expense': {
+        badge: 'Full-Stack App',
+        icon: 'fa-wallet',
+        title: 'Expense Tracking System',
+        domain: 'FastAPI · Streamlit · MySQL · Data Analytics',
+        descShort: 'A full-stack Expense Tracking System built with FastAPI backend and Streamlit frontend to track, categorize, budget, and analyze expenses.',
+        github: 'https://github.com/himelds/Expense-Management-System',
+        images: [
+            { src: './assets/documents/expense_dashboard.png', alt: 'Expense Dashboard' },
+            { src: './assets/documents/expense_budget.png', alt: 'Budget Manager' },
+            { src: './assets/documents/expense_analytics.png', alt: 'Analytics View' },
+            { src: './assets/documents/expense_transactions.png', alt: 'Transactions List' }
+        ],
+        descLong: '<ul><li><strong>Project Overview:</strong> A full-stack Expense Tracking System built with FastAPI backend and Streamlit frontend. It helps users track, categorize, budget, and analyze their expenses through an interactive dashboard and a clean UI.</li><li><strong>Key Features:</strong> The system includes a comprehensive dashboard with summary metrics and spending trend charts. It provides robust transaction management with search and filter capabilities, a budget manager with visual progress bars and over-budget alerts, and detailed analytics by category and month.</li><li><strong>Technical Architecture:</strong> The application features a decoupled architecture with a Streamlit frontend and a FastAPI backend. It utilizes MySQL 8.0 for data persistence, with automatic schema generation on startup. Data validation is handled via Pydantic v2, and interactive data visualizations are powered by Plotly.</li><li><strong>API Integration:</strong> The backend exposes a RESTful API with endpoints for CRUD operations on expenses, budgets, and custom categories, which the frontend consumes to provide a seamless user experience.</li></ul>',
     }
 };
 
@@ -198,6 +216,7 @@ const pmDomain = document.getElementById('pm-domain');
 const pmDescShort = document.getElementById('pm-desc-short');
 const pmGithubLink = document.getElementById('pm-github-link');
 const pmLinkedinLink = document.getElementById('pm-linkedin-link');
+const pmStreamlitLink = document.getElementById('pm-streamlit-link');
 const pmDescLong = document.getElementById('pm-desc-long');
 const pmVideo = document.getElementById('pm-video');
 const pmVideoContainer = document.getElementById('pm-video-container');
@@ -286,6 +305,14 @@ openModalBtns.forEach(card => {
             pmLinkedinLink.style.display = 'inline-flex';
         } else {
             pmLinkedinLink.style.display = 'none';
+        }
+
+        // Conditional Streamlit Link
+        if (data.streamlit) {
+            pmStreamlitLink.href = data.streamlit;
+            pmStreamlitLink.style.display = 'inline-flex';
+        } else {
+            pmStreamlitLink.style.display = 'none';
         }
 
         // Populate bottom methodology
