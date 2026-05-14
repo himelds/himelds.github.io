@@ -115,6 +115,26 @@ revealElements.forEach(el => revealObserver.observe(el));
 /*==================== PROJECT DATA ====================*/
 // The data behind the massive custom modal windows
 const projectData = {
+    'p-kidney': {
+        badge: 'Deep Learning',
+        icon: 'fa-brain',
+        title: 'Kidney Tumor Identification System',
+        domain: 'Medical AI · Computer Vision · MLOps',
+        descShort: 'A production-ready deep learning system for kidney CT scan classification with explainable AI and automated ML tracking.',
+        github: 'https://github.com/himelds/kidney-tumor-identification-system',
+        linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7460666885672546307/',
+        streamlit: 'https://kidney-tumor-identification-system.streamlit.app/',
+        images: [
+            { src: './assets/documents/kidney_1.png', alt: 'Dataset Distribution' },
+            { src: './assets/documents/kidney_2.png', alt: 'Model Performance Metrics' },
+            { src: './assets/documents/kidney_3.png', alt: 'Grad-CAM Heatmap Overlay' },
+            { src: './assets/documents/kidney_4.png', alt: 'Kidney Tumor Identification System Screenshot 1' },
+            { src: './assets/documents/kidney_5.png', alt: 'Kidney Tumor Identification System Screenshot 2' },
+            { src: './assets/documents/kidney_6.png', alt: 'Kidney Tumor Identification System Screenshot 3' }
+        ],
+        descLong: '<ul><li><strong>Project Overview:</strong> A production-ready deep learning application that classifies kidney CT scan images into four categories: Normal, Cyst, Tumor, and Stone. Built with MLOps best practices, it provides accurate AI-assisted diagnostics with full explainability.</li><li><strong>Methodology:</strong> Developed using EfficientNetB4 with a custom classification head. The system integrates Grad-CAM heatmaps for visual explanations and Monte Carlo Dropout for uncertainty quantification. It includes a complete MLOps pipeline with MLflow for experiment tracking, Evidently AI for data drift monitoring, and GitHub Actions for CI/CD.</li><li><strong>Model Performance:</strong> Achieved a Validation Accuracy of 99.46% and a Test AUC-ROC of 98.38%. The model is highly specific (95.00%) and sensitive (85.36%), making it a robust decision-support tool.</li><li><strong>Architecture & Deployment:</strong> The system features a decoupled architecture with a Streamlit UI and a FastAPI backend, utilizing Redis and Celery for asynchronous PDF report generation. The entire system is containerized with Docker and the model is hosted on Hugging Face Hub.</li></ul>',
+        video: 'https://www.youtube.com/embed/PrtjSg-C7gw'
+    },
     'p-bikeshare': {
         badge: 'Machine Learning',
         icon: 'fa-brain',
