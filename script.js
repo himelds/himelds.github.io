@@ -1,116 +1,61 @@
-/*==================== PRELOADER ====================*/
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('fade-out');
-        setTimeout(() => { preloader.style.display = 'none'; }, 500);
-    }
-});
-
-/*==================== TYPING ANIMATION ====================*/
-const typingTextElement = document.querySelector('.typing-text');
-if (typingTextElement !== null) {
-    const titles = ["Developing ML & AI Solutions", "Open Source Contributor", "AI Research Enthusiast"];
-    let titleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingDelay = 100;
-    let erasingDelay = 30;
-    let newTitleDelay = 2000;
-
-    function type() {
-        const currentTitle = titles[titleIndex];
-
-        if (isDeleting) {
-            typingTextElement.textContent = currentTitle.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            typingTextElement.textContent = currentTitle.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        let typeSpeed = isDeleting ? erasingDelay : typingDelay;
-
-        if (!isDeleting && charIndex === currentTitle.length) {
-            typeSpeed = newTitleDelay;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            titleIndex++;
-            if (titleIndex >= titles.length) {
-                titleIndex = 0;
-            }
-            typeSpeed = 500;
-        }
-        setTimeout(type, typeSpeed);
-    }
-    setTimeout(type, newTitleDelay);
-}
-
-/*==================== THEME TOGGLE ====================*/
-const themeButton = document.getElementById('theme-toggle');
-const selectedTheme = localStorage.getItem('selected-theme');
-
-if (selectedTheme) {
-    document.documentElement.setAttribute('data-theme', selectedTheme);
-} else {
-    document.documentElement.setAttribute('data-theme', 'light');
-}
-
-themeButton.addEventListener('click', () => {
-    let currentTheme = document.documentElement.getAttribute('data-theme');
-    let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('selected-theme', newTheme);
-});
-
-/*==================== SHOW MENU ====================*/
+/*==================== MOBILE NAVIGATION MENU ====================*/
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close');
+    navClose = document.getElementById('nav-close'),
+    navBackdrop = document.getElementById('nav-backdrop');
 
-if (navToggle) { navToggle.addEventListener('click', () => { navMenu.classList.add('show-menu') }) }
-if (navClose) { navClose.addEventListener('click', () => { navMenu.classList.remove('show-menu') }) }
-
-// Close when clicking outside links on the overlay background
-if (navMenu) {
-    navMenu.addEventListener('click', (e) => {
-        if (e.target === navMenu) {
-            navMenu.classList.remove('show-menu');
-        }
-    });
+function openMobileMenu() {
+    if (navMenu) navMenu.classList.add('show-menu');
+    if (navBackdrop) navBackdrop.classList.add('show-backdrop');
+    document.body.style.overflow = 'hidden';
 }
 
-const navLink = document.querySelectorAll('.nav__link');
-navLink.forEach(n => n.addEventListener('click', () => { navMenu.classList.remove('show-menu') }));
-
-/*==================== CHANGE BACKGROUND HEADER ====================*/
-function scrollHeader() {
-    const header = document.getElementById('header');
-    if (this.scrollY >= 50) header.classList.add('scroll-header'); else header.classList.remove('scroll-header');
+function closeMobileMenu() {
+    if (navMenu) navMenu.classList.remove('show-menu');
+    if (navBackdrop) navBackdrop.classList.remove('show-backdrop');
+    document.body.style.overflow = '';
 }
-window.addEventListener('scroll', scrollHeader);
 
-/*==================== SCROLL REVEAL ANIMATIONS ====================*/
-const revealElements = document.querySelectorAll('.reveal, .reveal--slide-left, .reveal--slide-right, .reveal--slide-up, .reveal--fade');
-
-const revealCallback = function (entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+if (navToggle) {
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (navMenu && navMenu.classList.contains('show-menu')) {
+            closeMobileMenu();
         } else {
-            entry.target.classList.remove('active');
+            openMobileMenu();
         }
     });
-};
+}
 
-const revealObserver = new IntersectionObserver(revealCallback, {
-    root: null,
-    threshold: 0.1,
-    rootMargin: "0px"
+if (navClose) {
+    navClose.addEventListener('click', closeMobileMenu);
+}
+
+if (navBackdrop) {
+    navBackdrop.addEventListener('click', closeMobileMenu);
+}
+
+const navLinks = document.querySelectorAll('.nav__link, .nav__mobile-cta');
+navLinks.forEach(n => n.addEventListener('click', closeMobileMenu));
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('show-menu')) {
+        closeMobileMenu();
+    }
 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+/*==================== SCROLL HEADER STYLING ====================*/
+function scrollHeader() {
+    const header = document.getElementById('header');
+    if (header) {
+        if (window.scrollY >= 50) {
+            header.classList.add('scroll-header');
+        } else {
+            header.classList.remove('scroll-header');
+        }
+    }
+}
+window.addEventListener('scroll', scrollHeader);
 
 /*==================== PROJECT DATA ====================*/
 // The data behind the massive custom modal windows
@@ -151,23 +96,20 @@ const projectData = {
         descLong: '<ul><li><strong>Project Overview:</strong> An end-to-end machine learning project focused on predicting demand for London\'s Santander bike-sharing system using real-world environmental and temporal data. It features a modular MLOps pipeline and an interactive Streamlit Dashboard for real-time predictions.</li><li><strong>Data Analysis & Insights:</strong> Analyzed 17,414 hourly entries, extracting temporal features and validating outliers. Key findings show bike rentals peak heavily during the morning (8 AM) and evening commutes (5-6 PM), and demand consistently increases as temperatures rise.</li><li><strong>Model Performance:</strong> Evaluated several regression models. While Gradient Boosting initially performed well, the deployed Random Forest model achieved a superior R² Score of 0.957 after final pipeline optimizations, proving highly robust and interpretable.</li><li><strong>Project Architecture & Impact:</strong> Transformed from an experimental notebook into a professional ML repository featuring a zero-config cloud deployment that auto-trains the model if missing. These actionable insights support operational decisions like predictive bike allocation and resource optimization.</li></ul>',
         // video: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Placeholder video
     },
-    'p-solar': {
-        badge: 'Machine Learning',
-        icon: 'fa-brain',
-        title: 'Solar Flare Classification',
-        domain: 'Machine Learning · Classification · Solar Flare Analysis',
-        descShort: 'Developed a robust MLOps pipeline to classify solar flare intensity using historical data, handling severe class imbalance with SMOTE and utilizing SHAP for feature analysis.',
-        github: 'https://github.com/himelds/Solar-Flare-Classification-Using-Machine-Learning',
-        streamlit: 'https://solarflareclassification.streamlit.app/',
+    'p-mediquery': {
+        badge: 'Healthcare RAG / GenAI',
+        icon: 'fa-user-md',
+        title: 'MediQuery — Role-Gated Medical Assistant',
+        domain: 'Generative AI · Hybrid RAG · RBAC · Containerized Architecture',
+        descShort: 'Role-gated medical knowledge assistant for hospital staff. Hybrid-retrieval RAG with JWT-based RBAC, query-time safety guards, and conversation-aware query rewriting — containerised end-to-end.',
+        github: 'https://github.com/himelds/MediQuery',
         images: [
-            { src: './assets/documents/media_solar_1.png', alt: 'Missing Values per Feature' },
-            { src: './assets/documents/media_solar_2.png', alt: 'Distribution of Solar Flare Classes' },
-            { src: './assets/documents/media_solar_3.png', alt: 'Flare Intensity by Class' },
-            { src: './assets/documents/media_solar_4.png', alt: 'Solar Flare Activity (1981 - 2017)' },
-            { src: './assets/documents/media_solar_5.png', alt: 'Correlation Heatmap of Numerical Features' }
+            { src: './assets/documents/mediquery_doctor_chat.png', alt: 'Doctor querying clinical policy with verified cited sources' },
+            { src: './assets/documents/mediquery_login_page.png', alt: 'Role-based JWT authentication interface' },
+            { src: './assets/documents/mediquery_nurse_chat.png', alt: 'Cross-role denial enforcing retrieval-time RBAC safety' },
+            { src: './assets/documents/mediquery_billing_chat.png', alt: 'Billing executive retrieving authorized NHS Trust financial policies' }
         ],
-        descLong: '<ul><li><strong>Project Overview:</strong> This project applies machine learning techniques to classify solar flare events and analyze key factors influencing flare intensity.</li><li><strong>Methodology:</strong> I developed a robust MLOps pipeline covering data preprocessing, feature engineering (e.g., Flare Duration, Time to Peak), and model training. To address severe class imbalance, I implemented the SMOTE algorithm. Multiple models were evaluated, including Random Forest, Decision Tree, Gradient Boosting, and Logistic Regression.</li><li><strong>Model Performance:</strong> The Random Forest Classifier outperformed other models, achieving the highest overall accuracy (~69%), and was automatically selected by the ModelTrainer for deployment. While it performed exceptionally well on the majority class (C-Class), minority classes remain challenging due to extreme data imbalance. Feature importance analysis using SHAP revealed that intensity, flare duration, and time-to-peak are the strongest predictors.</li><li><strong>Technologies & Applications:</strong> Built using Python, Scikit-learn, SMOTE, SHAP, Pandas, and Streamlit. The insights generated can support space weather forecasting systems, early warning systems for solar storms, and research on solar activity patterns.</li></ul>',
-
+        descLong: '<ul><li><strong>Problem & Motivation:</strong> Hospital knowledge is fragmented and role-sensitive. Clinical ICU guidelines, billing submission rules, and biomedical equipment manuals must not be commingled. Off-the-shelf RAG demos retrieve from a single flattened index and rely on fragile prompt instructions. MediQuery enforces access control at retrieval, not at generation.</li><li><strong>Role-Based Access Control (RBAC):</strong> Server-side JWT role claims gate collection access across 6 independent corpora (medical, clinical, nursing, billing, equipment, general) before retrieval runs. An unauthorized collection is never queried, ranked, or exposed to the LLM. Nurse roles feature additional semantic intent filtering prohibiting diagnostic or prescribing queries.</li><li><strong>Production-Grade Hybrid Retrieval:</strong> Combines lexical precision (BM25) with semantic recall (ChromaDB dense embeddings via sentence-transformers/all-MiniLM-L6-v2) across role-authorized collections. Candidates are merged via Reciprocal Rank Fusion (RRF, k=60), then re-ranked with a Cross-Encoder (ms-marco-MiniLM-L-6-v2) to provide the top-5 relevant passages to Groq (llama-3.3-70b-versatile).</li><li><strong>Intelligent Safety Guardrails & Query Rewriting:</strong> A 3-layer pre-retrieval guard stops prompt injections, out-of-scope queries, and role violations with helpful refusal hints. Multi-turn context is managed via LLM query rewriting rather than raw chat history stuffing.</li><li><strong>End-to-End Containerization & Quality:</strong> Full-stack orchestration via Docker Compose with pre-built indexes and models for instant cold starts. Tested with pytest for auth and role matrices, linted with Ruff, and protected with Gitleaks in GitHub Actions CI.</li></ul>',
     },
     'p-traffic': {
         badge: 'Data Visualization',
@@ -301,7 +243,7 @@ document.getElementById('pm-carousel-prev').addEventListener('click', () => {
 });
 
 // Open Modal Action
-const openModalBtns = document.querySelectorAll('.portfolio__card');
+const openModalBtns = document.querySelectorAll('.project-card');
 
 openModalBtns.forEach(card => {
     card.addEventListener('click', (e) => {
